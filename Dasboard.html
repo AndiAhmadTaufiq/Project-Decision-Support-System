@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decision Support System AHP & SAW</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Decision Support System: AHP & SAW pada SD 47 Joalampe Kab. Sinjai</h1>
+        <nav>
+            <button id="go-to-criteria">Input Kriteria</button>
+            <button id="go-to-students">Input Alternatif</button>
+            <button id="go-to-values">Input Nilai</button>
+            <button id="go-to-results">Lihat Perankingan</button>
+        </nav>
+    </header>
+    <main>
+        <section id="criteria-section" class="active-section">
+            <h2>Input Kriteria</h2>
+            <div id="criteria-container">
+                <!-- Input dinamis untuk kriteria -->
+            </div>
+            <button id="add-criteria">Tambah Kriteria</button>
+            <button id="save-criteria">Simpan Kriteria</button>
+            <h3>Perbandingan Berpasangan (AHP)</h3>
+            <div id="pairwise-container">
+                <!-- Matriks perbandingan berpasangan -->
+            </div>
+            <button id="calculate-ahp">Hitung AHP</button>
+            <!-- Tambahkan keterangan AHP dengan gambar -->
+            <div style="margin-top: 20px;">
+                <h4>Keterangan Tingkat Kepentingan AHP (Analytical Hierarchy Process)</h4>
+                <img src="Skala Perbandingan Berpasanganan.png" alt="Keterangan AHP" style="max-width: 100%; height: auto; border: 1px solid #ccc; padding: 10px;">
+            </div>
+        </section>
+        
+        <!-- Section: Input Siswa -->
+        <section id="student-section">
+            <h2>Input Alternatif/ Siswa</h2>
+            <div id="student-container">
+                <!-- Input dinamis untuk siswa -->
+            </div>
+            <button id="add-student">Tambah Siswa</button>
+            <button id="save-students">Simpan Siswa</button>
+        </section>
+
+        <!-- Section: Input Nilai -->
+        <section id="input-values-section">
+            <h2>Input Nilai</h2>
+            <input type="file" id="upload-excel" accept=".xls,.xlsx">
+            <button id="upload-excel-button">Unggah dan Proses</button>
+            <div id="values-container"></div>
+            <button id="save-values">Simpan Nilai</button>
+            <button id="reset-values">Reset Nilai</button>
+        </section>
+        
+
+        <section id="results-section">
+            <h2>Hasil Perankingan SAW (Simple Additive Weighting)</h2>
+            <button id="process-data">Proses Perankingan</button>
+            <button id="download-excel">Download Excel</button> 
+            <button id="download-pdf">Download PDF</button>
+
+            <table id="results-table">
+                <thead>
+                    <tr>
+                        <th>Nama Siswa</th>
+                        <th>SAW Score</th>
+                        <th>Ranking</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+    </main>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
+
+
+</body>
+</html>
